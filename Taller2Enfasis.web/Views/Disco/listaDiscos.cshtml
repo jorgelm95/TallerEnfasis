@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Taller2Enfasis.Persistencia.Disco>
+
+@{
+    ViewBag.Title = "listaDiscos";
+    Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+}
+
+<div class="well">
+    discos de la tienda
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.FechaLanzamiento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumeroCanciones)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Precio)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaLanzamiento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumeroCanciones)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Precio)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "EditarDisco", "Disco", new { idDisco = item.Id }, new { @class = "btn btn-primary btn-xs" }) |
+                    @Html.ActionLink("Agregar Canciones", "AgregarCaciones", "Administrador", new { idDisco = item.Id }, new { @class = "btn btn-primary btn-xs" }) |
+                    @Html.ActionLink("Eliminar", "EliminarDisco", "Disco", new { idDisco = item.Id }, new { @class = "btn btn-primary btn-xs" })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

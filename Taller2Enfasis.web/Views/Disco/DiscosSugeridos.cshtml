@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Taller2Enfasis.Persistencia.Disco>
+
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <strong>Discos sugeridos</strong>
+    </div>
+    <div class="panel-body">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UrlFoto)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FechaLanzamiento)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NumeroCanciones)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Precio)
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UrlFoto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaLanzamiento)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NumeroCanciones)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Precio)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Agregar al carrito", "Details", new { id = item.Id }, new { @class = "btn btn-success btn-xs" })
+
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+
+</div>

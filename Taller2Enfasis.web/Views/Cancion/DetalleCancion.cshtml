@@ -1,0 +1,49 @@
+﻿@model Taller2Enfasis.Persistencia.Cancion
+
+@{
+    ViewBag.Title = "DetalleCancion";
+    Layout = "~/Views/Shared/_LayoutUsuarioComprador.cshtml";
+}
+
+<div>
+    <hr />
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            <h2>Detalle Cancion</h2>
+        </div>
+        <div class="panel-body">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.NombreCacion)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.NombreCacion)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Duracion)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Duracion)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Precio)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Precio)
+                </dd>
+
+              
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Agregar al carrito", "Edit", new { id = Model.Id }, new { @class = "btn btn-success btn-xs" }) |
+            @Html.ActionLink("Regresar", "Index")
+        </p>
+    </div>
+</div>

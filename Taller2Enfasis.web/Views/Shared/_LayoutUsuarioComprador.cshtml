@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Sistema Musica</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/site.css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body style="padding-top:0px;">
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <div class="row clearfix">
+                    <div class="col-md-6 column">
+                    </div>
+                    <div class="col-md-6 column">
+                        <ul class="nav nav-tabs">
+
+                            <li>
+                                @Html.ActionLink("Perfil", "DetalleUsuario", "Usuario", new { id = ViewBag.idUsuario }, null)
+                            </li>
+                            <li>
+                                @Html.ActionLink("Inicio", "Index", "Home")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Entrar", "Login", "Usuario")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Panel Administrativo", "IndexAdministrador", "Administrador")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Contactenos", "Contactenos")
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="" id="">
+                    @RenderBody()
+                </div>
+                <hr />
+                <div class="row clearfix">
+                    <div class="col-md-6 column">
+
+                        <strong>Trabajo academico hecho por;</strong>
+                        <p> Jorge luis Menco </p>
+                        <p> David Castaño</p>
+
+                    </div>
+                    <div class="col-md-6 column" id="piedepagina">
+                        <div class="row clearfix">
+                            <div class="col-md-4 column" id="columna2">
+                                <a href="#"><img class="imagenes" src="#"></a>
+                            </div>
+                            <div class="col-md-4 column">
+                                <a href="#"><img class="imagenes" src="#"></a>
+                            </div>
+                            <div class="col-md-4 column">
+                                <a href="#"><img class="imagenes" src="#"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+    </div>
+</body>
+</html>

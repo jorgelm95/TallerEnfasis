@@ -1,0 +1,108 @@
+﻿@model Taller2Enfasis.Persistencia.Disco
+
+@{
+    ViewBag.Title = "AgregarCaciones";
+    Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+}
+
+<p>Agregar canciones</p>
+
+<div class="panel panel-success">
+    <div class="panel-heading">
+
+    </div>
+    <div class="panel-body">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Nombre)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.UrlFoto)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UrlFoto)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.FechaLanzamiento)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FechaLanzamiento)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NumeroCanciones)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NumeroCanciones)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Precio)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Precio)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.IdArtista)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IdArtista)
+            </dd>
+
+        </dl>
+        <h4> canciones del disco</h4>
+        @Html.ActionLink("Agregar Cancion", "GuardarCancion", "Cancion", new { IdDisco = Model.Id }, new { @class = "btn btn-primary btn-xs" })
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        Nombre cancion
+                    </th>
+                    <th>
+                        Duracion
+                    </th>
+                    <th>
+                        Opciones
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var cancion in Model.Canciones)
+                {
+                    <tr>
+                        <th>
+                            @Html.DisplayFor(albumItem => cancion.NombreCacion)
+                        </th>
+                        <th>
+                            @Html.DisplayFor(albumItem => cancion.Duracion)
+                        </th>
+                        <th>
+                            @Html.ActionLink("Editar", "EditarAlbum", new { id = cancion.Id }, new { @class = "btn btn-success btn-xs" }) |
+                            @Html.ActionLink("Eliminar", "EliminarCancion", "Cancion", new { idCancion = cancion.Id }, new { @class = "btn btn-primary btn-xs" })
+                        </th>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+</div>
+
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+

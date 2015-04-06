@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Taller2Enfasis.Persistencia.Cancion>
+
+@{
+    ViewBag.Title = "ObtenerCaciones";
+    Layout = "~/Views/Shared/_LayoutUsuarioComprador.cshtml";
+}
+
+<h2>ObtenerCaciones</h2>
+
+<p>
+    @Html.ActionLink("Regresar", "Index", "Usuario")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreCacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Duracion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Precio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idDisco)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreCacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Duracion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Precio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.idDisco)
+            </td>
+            <td>
+                @Html.ActionLink("detalle", "DetalleCancion", "Cancion", new { id = item.Id }, new { @class = "btn btn-success btn-xs" }) |
+                @Html.ActionLink("agregar al carrito", "Details", new { id = item.Id }, new { @class = "btn btn-success btn-xs" })
+            </td>
+        </tr>
+    }
+
+</table>

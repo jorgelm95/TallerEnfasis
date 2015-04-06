@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutUsuarioComprador.cshtml";
+}
+
+<header>
+    <div class="row">
+        <div>
+            @Html.Action("DiscosSugeridos", "Disco")
+        </div>
+    </div>
+</header>
+
+<br />
+<div class="row clearfix">
+    <div class="col-md-5">
+        <div class="">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <strong>Busqueda de canciones</strong>
+                </div>
+                <div class="panel-body">
+                    <form action="/Cancion/ObtenerCaciones" method="get">
+                        <select name="opcion">
+                            <option value="Artista" name="opcion1">Artista</option>
+                            <option value="album" name="opcion2">Disco</option>
+                            <option value="Genero" name="opcion3">Genero</option>
+                        </select>
+                        <input type="search" name="palabraClave" value="" />
+                        <input type="submit" value="buscar" />
+                    </form>
+                    @Html.ActionLink("Buscar", "ObtenerCaciones", "Cancion", new { @class = "btn btn-primary btn-sm" })
+                </div>
+            </div>
+        </div>
+    </div>
+    <aside class="col-md-7">
+        @Html.Action("ListarCanciones", "Cancion")
+    </aside>
+
+</div>
+
+<div class="">
+
+</div>
+
+
+
+
+
+

@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Taller2Enfasis.Persistencia.Cancion>
+
+@{
+    ViewBag.Title = "listaCanciones";
+    Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+}
+
+<h2>listaCanciones</h2>
+
+<div class="well">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreCacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Duracion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Precio)
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreCacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Duracion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Precio)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "EditarCancion", "Cancion", new { idCancion = item.Id }, new { @class = "btn btn-primary btn-xs" })
+                    @Html.ActionLink("eliminar", "EliminarCancion", "Cancion", new { idCancion = item.Id }, new { @class = "btn btn-primary btn-xs" })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

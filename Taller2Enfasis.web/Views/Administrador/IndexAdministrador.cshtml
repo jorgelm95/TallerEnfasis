@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Taller2Enfasis.Persistencia.Artista>
+
+@{
+    ViewBag.Title = "IndexAdministrador";
+    Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+}
+
+<strong>Artistas</strong>
+<div class="well">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombres)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UrlFoto)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombres)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UrlFoto)
+                </td>
+                <td>
+                    @Html.ActionLink("Agregar disco", "AgregarDiscos", new { id = item.Id }, new { @class = "btn btn-success btn-xs" }) |
+                    @Html.ActionLink("eliminar", "eliminar", new { id = item.Id }, new { @class = "btn btn-primary btn-xs" })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

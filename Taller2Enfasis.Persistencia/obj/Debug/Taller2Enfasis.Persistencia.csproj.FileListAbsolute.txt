@@ -1,0 +1,12 @@
+c:\users\jorgeluis\documents\visual studio 2013\Projects\Taller2Enfasis\Taller2Enfasis.Persistencia\bin\Debug\Taller2Enfasis.Persistencia.dll.config
+c:\users\jorgeluis\documents\visual studio 2013\Projects\Taller2Enfasis\Taller2Enfasis.Persistencia\bin\Debug\Taller2Enfasis.Persistencia.dll
+c:\users\jorgeluis\documents\visual studio 2013\Projects\Taller2Enfasis\Taller2Enfasis.Persistencia\bin\Debug\Taller2Enfasis.Persistencia.pdb
+c:\users\jorgeluis\documents\visual studio 2013\Projects\Taller2Enfasis\Taller2Enfasis.Persistencia\bin\Debug\EntityFramework.dll
+c:\users\jorgeluis\documents\visual studio 2013\Projects\Taller2Enfasis\Taller2Enfasis.Persistencia\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\jorgeluis\documents\visual studio 2013\Projects\Taller2Enfasis\Taller2Enfasis.Persistencia\bin\Debug\EntityFramework.xml
+c:\users\jorgeluis\documents\visual studio 2013\Projects\Taller2Enfasis\Taller2Enfasis.Persistencia\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\jorgeluis\documents\visual studio 2013\Projects\Taller2Enfasis\Taller2Enfasis.Persistencia\obj\Debug\Taller2Enfasis.Persistencia.csprojResolveAssemblyReference.cache
+c:\users\jorgeluis\documents\visual studio 2013\Projects\Taller2Enfasis\Taller2Enfasis.Persistencia\obj\Debug\Taller2Enfasis.Persistencia.dll
+c:\users\jorgeluis\documents\visual studio 2013\Projects\Taller2Enfasis\Taller2Enfasis.Persistencia\obj\Debug\Taller2Enfasis.Persistencia.pdb
+c:\users\jorgeluis\documents\visual studio 2013\Projects\Taller2Enfasis\Taller2Enfasis.Persistencia\obj\Debug\Taller2Enfasis.Persistencia.Migrations.InitialCreate.resources
+c:\users\jorgeluis\documents\visual studio 2013\Projects\Taller2Enfasis\Taller2Enfasis.Persistencia\obj\Debug\Taller2Enfasis.Persistencia.csproj.GenerateResource.Cache

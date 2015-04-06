@@ -1,0 +1,23 @@
+﻿@model Taller2Enfasis.Persistencia.Usuario
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2><strong>Ingresar</strong></h2>
+
+@using (Html.BeginForm(actionName: "validarUsuario", controllerName: "Usuario", method: FormMethod.Get))
+{
+    <div><strong>Usuario</strong> </div>
+    <div>@Html.TextBoxFor(m => m.Username, new { @class = "form-control" })</div>
+    <div><strong>Contraseña</strong> </div>
+    <div>@Html.PasswordFor(m => m.Password, new { @class = "form-control" })</div>
+    <br />
+
+    <input type="submit" class="btn btn-primary btn-sm" value="Iniciar Sesion" />
+    @Html.ActionLink("Registrate", "GuardarUsuario", "Usuario", new {@class="btn btn-primary btn-sm" });
+    <br />
+    <div class="alert alert-danger">@ViewBag.MensajeError</div>
+}
+

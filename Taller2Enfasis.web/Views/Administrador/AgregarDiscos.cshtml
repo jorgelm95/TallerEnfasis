@@ -1,0 +1,79 @@
+﻿@model Taller2Enfasis.Persistencia.Artista
+
+@{
+    ViewBag.Title = "AgregarDiscos";
+    Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <p><strong> Discos del  artista</strong></p>
+    </div>
+    <div class="panel-body">
+        <div>
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Nombres)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Nombres)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.UrlFoto)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.UrlFoto)
+                </dd>
+
+            </dl>
+            <h4> Discos del artista</h4>
+            @Html.ActionLink("Agregar Disco", "GuardarDisco", "Disco", new { IdArtista = Model.Id }, new { @class = "btn btn-primary btn-xs" })
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            Nombre Album
+                        </th>
+                        <th>
+                            Fecha Lanzamiento
+                        </th>
+                        <th>
+                            Opciones
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var discos in Model.discos)
+                    {
+                        <tr>
+                            <th>
+                                @Html.DisplayFor(albumItem => discos.Nombre)
+                            </th>
+                            <th>
+                                @Html.DisplayFor(albumItem => discos.FechaLanzamiento)
+                            </th>
+                            <th>
+                                @Html.DisplayFor(albumItem => discos.Id)
+                            </th>
+                            <th>
+                                @Html.ActionLink("Editar", "EditarAlbum", new { id = discos.Id }, new { @class = "btn btn-primary btn-xs" }) |
+                                @Html.ActionLink("Agregar Canciones", "AgregarCaciones", "Administrador", new { idDisco = discos.Id }, new { @class = "btn btn-success btn-xs" }) |
+                                @Html.ActionLink("Eliminar", "EliminarDisco", "Disco", new { idDisco = discos.Id }, new { @class = "btn btn-primary btn-xs" })
+                            </th>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+</div>
+
+<p>
+    @Html.ActionLink("Back to List", "Index", new { @class = "btn btn-primary btn-xs" })
+</p>
+
